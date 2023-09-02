@@ -15,11 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   _fetchNews() async {
     var url = Uri.parse(News_api_URL);
     var response = await http.get(url);
     return jsonDecode(response.body);
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                     return const CircularProgressIndicator();
                   }
                 })),
+                
       ),
     );
   }
